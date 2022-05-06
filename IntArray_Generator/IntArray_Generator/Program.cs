@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 namespace IntArray_Generator
 {
@@ -12,9 +14,21 @@ namespace IntArray_Generator
             Console.WriteLine("Name your file. Please include the path infront of the name:");
             string path = @"" + Console.ReadLine();
 
+            try
+            {
+                if (File.Exists(path))
+                {
+                    throw new Exception();
+                }
 
-            
-            
+                File.Create(path);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("This file already exists");
+            }
+
+
             Console.ReadKey();
         }
     }
