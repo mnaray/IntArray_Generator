@@ -16,7 +16,7 @@ namespace IntArray_Generator
             // There's also an empty integer variable, that is going to be the amount of numbers to generate.
             Console.WriteLine("Name your file. Please include the path infront of the name:");
             string path = @"" + Console.ReadLine();
-            path = @"C:\Users\marci\Desktop\testfile.txt";
+            // path = @"C:\Users\marci\Desktop\testfile.txt";
             int arrLength;
 
 
