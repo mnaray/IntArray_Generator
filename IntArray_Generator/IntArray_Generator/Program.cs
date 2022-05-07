@@ -39,6 +39,13 @@ namespace IntArray_Generator
                 }
 
                 File.Create(path);
+
+                for (int i = 0; i < arrLength; i++)
+                {
+                    Random rd = new Random();
+                    int rand_num = rd.Next(-10000000, 10000000);
+                    File.AppendAllText(path, rand_num.ToString());
+                }
             }
             catch (Exception)
             {
@@ -47,12 +54,7 @@ namespace IntArray_Generator
 
 
 
-            for (int i = 0; i < arrLength; i++)
-            {
-                Random rd = new Random();
-                int rand_num = rd.Next(-10000000, 10000000);
-                File.AppendAllText(path, rand_num.ToString());
-            }
+
 
 
 
