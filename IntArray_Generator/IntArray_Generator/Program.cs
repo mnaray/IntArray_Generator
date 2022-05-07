@@ -38,7 +38,7 @@ namespace IntArray_Generator
                     throw new Exception();
                 }
 
-                //File.Create(path);
+                Console.WriteLine("Loading . . .");
 
                 for (int i = 0; i < arrLength; i++)
                 {
@@ -59,7 +59,7 @@ namespace IntArray_Generator
 
 
 
-
+            Console.WriteLine("The list of numbers has been created.\nPress any button to close the console window.");
             Console.ReadKey();
         }
     }
