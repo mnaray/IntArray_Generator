@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 
 // This console application generates an array of integers and writes them to a file.
 // The length of that array can be set by the user after running the program.
