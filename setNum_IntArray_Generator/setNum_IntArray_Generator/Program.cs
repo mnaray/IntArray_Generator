@@ -7,10 +7,7 @@ namespace setNum_IntArray_Generator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Name your file. Please include the full path infront of the name:");
-            string path = @"" + Console.ReadLine();
-            // path = @"C:\Users\marci\Desktop\testfile.txt";
-
+            string path;
             int solution;
             int arrLength;
 
@@ -50,34 +47,44 @@ namespace setNum_IntArray_Generator
                 }
             }
 
-            // This section of the script adds the numbers to the file.
-            try
+            while (true)
             {
-                // Checks if the file exists
-                // If so, then the process will stop
-                if (File.Exists(path))
+                // This section of the script adds the numbers to the file.
+                try
                 {
-                    throw new Exception();
-                }
+                    Console.WriteLine("Name your file. Please include the full path infront of the name:");
+                    path = @"" + Console.ReadLine();
+                    // path = @"C:\Users\marci\Desktop\testfile.txt";
 
-                // Simply tells the user, that there's something happening
-                Console.WriteLine("Loading . . .");
 
-                // for-loop that writes randomly generated numbers to the file
-                for (int i = 0; i < arrLength - solution; i++)
-                {
-                    int rand_num = 0;
-                    while (rand_num == solution)
+                    // Checks if the file exists
+                    // If so, then the process will stop
+                    if (File.Exists(path))
                     {
-                        Random rd = new Random();
-                        rand_num = rd.Next(-10000000, 10000000);
+                        throw new Exception();
                     }
-                    File.AppendAllText(path, rand_num.ToString() + Environment.NewLine);
+
+                    // Simply tells the user, that there's something happening
+                    Console.WriteLine("Loading . . .");
+
+                    // for-loop that writes randomly generated numbers to the file
+                    for (int i = 0; i < arrLength - solution; i++)
+                    {
+                        int rand_num = 0;
+                        while (rand_num == solution)
+                        {
+                            Random rd = new Random();
+                            rand_num = rd.Next(-10000000, 10000000);
+                        }
+                        File.AppendAllText(path, rand_num.ToString() + Environment.NewLine);
+                    }
+
+                    break;
                 }
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("This file already exists");
+                catch (Exception)
+                {
+                    Console.WriteLine("This file already exists");
+                }
             }
 
 
