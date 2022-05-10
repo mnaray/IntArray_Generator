@@ -54,7 +54,7 @@ namespace setNum_IntArray_Generator
                 {
                     Console.WriteLine("Name your file. Please include the full path infront of the name:");
                     path = @"" + Console.ReadLine();
-                    // path = @"C:\Users\marci\Desktop\testfile.txt";
+                    path = @"C:\Users\Startklar\Desktop\testfile.txt"; // REMOVE THIS LINE BEFORE PUSH
 
 
                     // Checks if the file exists
